@@ -169,7 +169,7 @@ func main() {
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html")
 		w.WriteHeader(http.StatusOK)
-		_, err := w.Write([]byte("<h1>Success</h1>"))
+		_, err := w.Write([]byte("<h1>healthy</h1>"))
 		if err != nil {
 			panic(err)
 		}
