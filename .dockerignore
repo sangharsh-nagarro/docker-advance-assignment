@@ -1,0 +1,8 @@
+LICENSE
+README.md
+*.sh
+.idea
+.gitignore
+.git
+Dockerfile
+.env
