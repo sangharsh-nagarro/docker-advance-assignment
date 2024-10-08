@@ -1,0 +1,24 @@
+name: Deploy to Local Machine
+
+on:
+  workflow_run:
+    workflows: ["ci"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Pull latest images
+        run: docker-compose pull
+
+      - name: Deploy with docker-compose
+        run: docker-compose --env-file .env up -d
+
+      - name: Clean up old images
+        run: docker image prune -f
