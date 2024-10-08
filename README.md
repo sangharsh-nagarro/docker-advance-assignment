@@ -31,7 +31,7 @@ This project is a simple user management service built with Go, utilizing Redis 
 
 3. Build and start the services:
    ```
-   docker-compose up --build
+   docker compose up --build
    ```
 
 4. The web service will be available at `http://localhost:8080`
