@@ -187,6 +187,3 @@ To use the CD pipeline for local deployment:
 #### Environment Variables
 
 The CD workflow uses the .env file located in your project directory on your local machine. Since the workflow runs on your local machine as a self-hosted runner, it has direct access to this file. But in a real production environment we should use some kind of secrets manager
-
-**Important**: Keep your .env file secure by not tracking it in git. Make sure it's listed in your .gitignore file.
-
