@@ -22,10 +22,10 @@ jobs:
           echo "MONGO_INITDB_DATABASE=${{ secrets.MONGO_INITDB_DATABASE }}" >> .env
 
       - name: Pull latest images
-        run: docker-compose pull
+        run: docker compose pull
 
       - name: Deploy with docker-compose
-        run: docker-compose up -d
+        run: docker compose up -d
 
       - name: Clean up old images
         run: docker image prune -f
