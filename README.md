@@ -187,3 +187,33 @@ To use the CD pipeline for local deployment:
 #### Environment Variables
 
 The CD workflow uses the .env file located in your project directory on your local machine. Since the workflow runs on your local machine as a self-hosted runner, it has direct access to this file. But in a real production environment we should use some kind of secrets manager
+
+### User Management API Demo
+
+![Create User API](docker-advance-assignment-demo.png)
+
+
+
+## CI/CD Pipeline Demo
+
+Our project utilizes a comprehensive CI/CD pipeline to automate building, testing, and deployment processes. Here's an overview of how it works:
+
+### Continuous Integration (CI)
+
+![CI Workflow](CI-Pipeline.png)
+
+Our CI workflow, triggered on every push to the main branch, performs the following steps:
+1. Checks out the code
+2. Sets up Docker Buildx for multi-architecture builds
+3. Logs in to Docker Hub
+4. Builds and pushes the Docker image for both AMD64 and ARM64 architectures
+
+### Continuous Deployment (CD)
+
+![CD Workflow](CD-Pipeline.png)
+
+Our CD workflow, which runs after a successful CI process, does the following:
+1. Deploys the latest version of the application to our self-hosted runner
+2. Creates the necessary .env file with secrets
+3. Pulls the latest Docker images
+4. Starts the services using Docker Compose
