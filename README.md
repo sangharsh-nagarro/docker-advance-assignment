@@ -204,9 +204,9 @@ Our project utilizes a comprehensive CI/CD pipeline to automate building, testin
 
 Our CI workflow, triggered on every push to the main branch, performs the following steps:
 1. Checks out the code
-2. Sets up Docker Buildx for multi-architecture builds
+2. Sets up Docker Buildx for builds
 3. Logs in to Docker Hub
-4. Builds and pushes the Docker image for both AMD64 and ARM64 architectures
+4. Builds and pushes the Docker image for AMD64 architectures
 
 ### Continuous Deployment (CD)
 
